@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>构建响应式网站</title>
+<style>
+/*头部*/
+body{font-family:"微软雅黑"; font-size:16px;}
+div,ul,li,p,h1{padding:0; margin:0;}
+.header{background:#85a4da; height:430px; position:relative; margin-top:-10px; margin-left:-8px; margin-right:-8px;}
+.header .nav ul{float:right; margin-top:25px;}
+.header .nav ul li{float:left; list-style:none; padding-right:40px;}
+.header .nav ul li a{text-decoration:none; color:#fff; font-weight:800; font-size:12px; font-family:"微软雅黑";}
+.header .nav ul li a:hover{color:#C0C0C0;}
+.header .nav .last{padding-right:20px;}
+.header .content{ margin:0 auto;width:750px; height:280px; text-align:center; padding-top:150px;}
+.header .content h2{font-family:"微软雅黑"; color:#fff; font-size:20px; margin-top:50px;}
+.header .nav h1{font-size:63px; color:#fff; font-family:Arial, Helvetica, sans-serif;}
+.header .line{width:100px;  height:4px; background-color:#fff; border:none;}
+/*内容*/
+.text{width:750px; margin:0 auto;}
+.text img{margin:50px 120px;}
+.text p{margin:40px 0;}
+.text h2{font-size:30px;}
+</style>
+</head>
+
+<body>
+<div class="header">
+     <div class="nav">
+          <ul>
+              <li><a href="./index.html">HOME</a></li>
+              <li><a href="./living.html">LIVING</a></li>
+              <li><a href="./technical.html">TECHNICAL</a></li>
+              <li class="last"><a href="./about.html">ABOUT</a></li>
+          </ul>
+          <div class="content">
+              <h1>构建响应式网站</h1>
+              <h2>March 24,2016</h2>
+          </div>
+     </div>
+</div>
+<div class="text">
+    <h2>#什么是响应式网站</h2>
+    <p>为了让不同屏幕大小的设备浏览同一个网站时，都具备良好的视觉布局效果，这就需要我们构建响应式网站。</p>
+    <p>进一步解释就是：当你的网站是非响应式的，你用类似iphone4这种小屏幕手机浏览时，内容刚好占据屏幕宽度，但你需要手动放大才能看清楚字。<p>
+    <p>而如果此时你的网站是响应式的，当你用上述手机浏览时，网页会自动缩放且以另一种布局占据你的屏幕，此时你不需要手动放大就能看清楚所有内容。</p>
+    <p>当你用手机、平板、电脑同时访问一个网站，你发现布局效果不同，那很显然这种就是响应式网站。</p>
+    <h2>#构建响应式网站需要什么</h2>
+    <p>首先你先了解如何创建可伸缩图像以及如何创建弹性布局网格</p>
+    <p>可伸缩图像的意思就是：图像可以根据屏幕的大小进行伸缩，这样就避免了图片大小大于屏幕大小而无法完全显示的问题。方法很容易，只要使用max-width=100%来替代width=value(value即为准备值)即可。</p>
+    <p>弹性布局网格的意思就是：盒子大小可以根据屏幕的大小进行伸缩，这样就避免了盒子大小超过屏幕大小而出现滚动条的问题。这就需要将父级盒子的宽度设置为max-width=value而不是width=value，将其子元素盒子的宽度设置为width=占父级盒子大小的百分比即可。</p>
+    <p>其次你需要了解的就是媒体查询。</p>
+    <p>媒体查询的功能就是匹配满足所列条件时才执行里面的语句。例如：@media only screen and (min-width:480px)<br>p{<br>
+      color:red;<br>
+      font-weight:bold;<br>
+      }<br>
+    的意思就是当在屏幕上查看网页时，屏幕的视觉区域大于等于480像素时p标签内容显示红色且加粗。</p>
+    <h2>#怎么构建响应式网站</h2>
+    <p>响应式网站的构建就是将以上三点组合起来使用实现的。</p>
+    <p>先在head元素中添加&lt;meta name="viewport" content="width=device-width", initial-scale=1"&gt;。其中width=device-width的作用是将视觉区域的宽度设成与设备宽度一致，这样就可以在纵向模式下让内容填充整个屏幕；initial-scale=1的作用是将默认缩放设成100%。</p>
+    <p>其次就是为所有设备提供基准样式，让内容按照文档流由上而下显示。(此过程需要避免让元素浮动或者对容器设置宽度)。</p>
+    <p>接着就是用媒体查询来对不同像素大小的屏幕进行区分样式。一般以大于320px设置一个，大于480px设置一个，480px-767px设置一个，大于768px设置一个。然后在样式里写入你想让这个像素大小下显示的样式布局。</p>
+    <p>这样一个响应式网站就建好了。</p>
+</div>
+</body>
+</html>
