@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ajax原理</title>
+<style>
+/*头部*/
+body{font-family:"微软雅黑"; font-size:16px;}
+div,ul,li,p,h1{padding:0; margin:0;}
+.header{background:#85a4da; height:430px; position:relative; margin-top:-10px; margin-left:-8px; margin-right:-8px;}
+.header .nav ul{float:right; margin-top:25px;}
+.header .nav ul li{float:left; list-style:none; padding-right:40px;}
+.header .nav ul li a{text-decoration:none; color:#fff; font-weight:800; font-size:12px; font-family:"微软雅黑";}
+.header .nav ul li a:hover{color:#C0C0C0;}
+.header .nav .last{padding-right:20px;}
+.header .content{ margin:0 auto;width:750px; height:280px; text-align:center; padding-top:150px;}
+.header .content h2{font-family:"微软雅黑"; color:#fff; font-size:20px; margin-top:50px;}
+.header .nav h1{font-size:65px; color:#fff; font-family:Arial, Helvetica, sans-serif;}
+.header .line{width:100px;  height:4px; background-color:#fff; border:none;}
+/*内容*/
+.text{width:750px; margin:0 auto;}
+.text img{margin:50px 120px;}
+.text p{margin:40px 0;}
+.text h2{font-size:30px;}
+</style>
+</head>
+
+<body>
+<div class="header">
+     <div class="nav">
+          <ul>
+              <li><a href="./index.html">HOME</a></li>
+              <li><a href="./living.html">LIVING</a></li>
+              <li><a href="./technical.html">TECHNICAL</a></li>
+              <li class="last"><a href="./about.html">ABOUT</a></li>
+          </ul>
+          <div class="content">
+              <h1>Ajax原理</h1>
+              <h2>May 1,2016</h2>
+          </div>
+     </div>
+</div>
+<div class="text">
+    <h2>#什么是Ajax</h2>
+    <p>Ajax是异步的JS和XML，简单来说就是通过异步方法向后台请求和发送数据。</p>
+    <p>Ajax的特点是节省操作，增强了用户体验，无需刷新就可以自动完成请求与发送操作。</p>
+    <p>典型的例子就是当你注册一个账号，输入账户名，会直接提示是否存在而无需你点击是否存在等类似按钮然后再返回告诉你结果。</p>
+    <h2>#如何使用Ajax</h2>
+    <p>首先需要创建一个XMLHttpRequest()对象，（ie6则创建ActiveXObject('Microsoft.XMLHTTP')对象）。</p>
+    <p>接着需要调用对象的open方法，open('传输方式',url,true)。</p>
+    <p>Ajax中有get和post两种传输方式，主要区别是：1.get通过url地址传输，post通过浏览器内部传输。2.get有数据量限制，post理论上无上限。</p>
+    <p>接着调用对象的send方法进行传输。</p>
+    <p>请求与发送操作完成后，等待后台返回结果，会将结果放在responseText这个变量中。</p>
+    <p></p>
+    <h2>#使用Get</h2>
+    <p>若使用get，那么url需+'?'+date。比如xhr.open('get','1.php?name=刘伟&age=20',true)。</p>
+    <p>并且为了解决缓存和中文乱码问题，后面需加上随机数和对中文进行encodeURI编码</p>
+    <p>按上面进行改动即为：xhr.open('get','2.php?username='+encodeURI('刘伟')+'&age=30&'+new Date().getTime(),true);</p>
+    <p>若使用get，那么send方法无需带参数，直接xhr.send()即可。</p>
+    <h2>#使用Post</h2>
+    <p>若使用post，那么只需写xhr.open('post','1.php',true)即可。即不会有缓存问题，也不会出现乱码问题。</p>
+    <p>但是在使用send方法前，需要声明请求头xhr.setRequestHeader('content-type','application/x-www-form-urlencoded')，因为post方法是通过请求头传输的。</p>
+    <p>send方法内部需要放自己传输的数据，即send('name=刘伟&age=20');</p>
+    
+</div>
+</body>
+</html>
