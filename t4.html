@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS3第一课</title>
+<style>
+/*头部*/
+body{font-family:"微软雅黑"; font-size:16px;}
+div,ul,li,p,h1{padding:0; margin:0;}
+.header{background:#85a4da; height:430px; position:relative; margin-top:-10px; margin-left:-8px; margin-right:-8px;}
+.header .nav ul{float:right; margin-top:25px;}
+.header .nav ul li{float:left; list-style:none; padding-right:40px;}
+.header .nav ul li a{text-decoration:none; color:#fff; font-weight:800; font-size:12px; font-family:"微软雅黑";}
+.header .nav ul li a:hover{color:#C0C0C0;}
+.header .nav .last{padding-right:20px;}
+.header .content{ margin:0 auto;width:750px; height:280px; text-align:center; padding-top:150px;}
+.header .content h2{font-family:"微软雅黑"; color:#fff; font-size:20px; margin-top:50px;}
+.header .nav h1{font-size:65px; color:#fff; font-family:Arial, Helvetica, sans-serif;}
+.header .line{width:100px;  height:4px; background-color:#fff; border:none;}
+/*内容*/
+.text{width:750px; margin:0 auto;}
+.text img{margin:50px 120px;}
+.text p{margin:40px 0;}
+.text h2{font-size:30px;}
+</style>
+</head>
+
+<body>
+<div class="header">
+     <div class="nav">
+          <ul>
+              <li><a href="./index.html">HOME</a></li>
+              <li><a href="./living.html">LIVING</a></li>
+              <li><a href="./technical.html">TECHNICAL</a></li>
+              <li class="last"><a href="./about.html">ABOUT</a></li>
+          </ul>
+          <div class="content">
+              <h1>CSS3第一课</h1>
+              <h2>May 22,2016</h2>
+          </div>
+     </div>
+</div>
+<div class="text">
+	<h2>#属性选择器</h2>
+    <p>p[attr]:选择具有attr属性的p标签</p>
+    <p>p[attr=xxx]:选择具有attr属性且属性名为xxx的p标签</p>
+    <p>p[attr~=yyy]:选择具有attr属性且有词列表yyy的p标签  例如：&ltp attr="hello yyy"&lt/p&gt</p>
+    <p>p[attr^=g]:选择具有attr属性且属性名以g开头的p标签</p>
+    <p>p[attr$=m]:选择具有attr属性且属性名以m结尾的p标签</p>
+    <p>p[attr*=s]:选择具有attr属性且属性名包含s的p标签</p>
+    <p>p[attr|=b]:选择具有attr属性且属性名以b-开头或者单纯只有b的p标签</p>
+    <h2>#结构选择器</h2>
+    <p>p:nth-child(1)  选择p标签父级的第一个子节点，并且这个子节点只能是p标签</p>
+    <p>p:nth-child(odd)  选择p标签父级的奇数子节点，并且这个子节点只能是p标签</p>
+    <p>p:nth-child(even)  选择p标签父级的偶数子节点，并且这个子节点只能是p标签</p>
+    <p>p:nth-child(2n-1)   括号内可以放关于n的表达式，同上</p>
+    <p>body *:nth-child(2)   body *表示body的所有子节点</p>
+    <p>p:nth-last-child(2)   选择p标签父级的倒数第2个子节点，并且这个子节点只能是p标签</p>
+    <p>p:nth-of-type(2)   选择p标签父级下的第二个p标签</p>
+    <p>p:nth-last-of-type(2)   选择p标签父级下的倒数第二个p标签</p>
+    <p>body *:nth-of-type(2)   选择body子节点所有类型的第二个标签</p>
+    <p>p:first-child = p:nth-child(1)</p>
+    <p>p:last-child = p:nth-last-child(1)</p>
+    <p>p:first-of-type = p:nth-of-type(1)</p>
+    <p>p:last-of-type = p:nth-last-of-type(1)</p>
+    <p>p:empty   找p的空标签</p>
+    <p>p:only-child   p标签父级只有一个p子节点（不能有其它子节点）</p>
+    <p>p:only-of-type   p标签父级只有一个p子节点（可以有其它子节点，但p只有一个）</p>
+    <p>p~h1   找到p后面的h1标签</p>
+    <h2>#伪类</h2>
+    <h3>#表单</h3>
+    <p>div:target (target代表哈希值的东西) 例如：&ltdiv id="div1"&gtdiv1&lt/div&gt target表示id="div1"</p>
+    <p>input:enabled   用在可编辑的input</p>
+    <p>input:disabled   用在不可编辑的input</p>
+    <p>input:checked   用在选择框</p>
+    <h3>#文本</h3>
+    <p>p:first-line   选择第一行文本</p>
+    <p>p:first-letter   选择第一个文字(文字无法被选中)</p>
+    <p>p::selection{background:red;}   文字选中时背景显示为红色</p>
+    <p>p::before(content:"Thanks")   在文本前面添加content的内容</p>
+    <p>p::after(content:"Thanks")   在文本后面添加content的内容</p>
+    <p>h1:not(.bobo)   排除掉类名为bobo的h1标签</p>
+    <h2>#文本</h2>
+    <p>颜色:rgba(red,green,blue,alpha) 颜色值为0-255,透明度为0-1</p>
+    <p>文字阴影:text-shadow:x轴距离 y轴距离 阴影模糊长度 颜色(阴影可以叠加)</p>
+    <p>文字描边:-webkit-text-stroke:宽度 颜色(只有webkit内核才支持)</p>
+    <p>direction:ltr(从左到右)  rtl(从右到左) 需配合unicode-bidi:bidi-override使用 (direction是兼容所有浏览器的)</p>
+    <p>text-overflow:ellipsis 文字超出后显示省略号 需配合white-space:nowrap和overflow:hidden使用 (text-overflow是兼容所有浏览器的)</p>
+    <p>@font-face 自定义字体</p>
+</div>
+</body>
+</html>
