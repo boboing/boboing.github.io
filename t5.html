@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS3第二课</title>
+<style>
+/*头部*/
+body{font-family:"微软雅黑"; font-size:16px;}
+div,ul,li,p,h1{padding:0; margin:0;}
+.header{background:#85a4da; height:430px; position:relative; margin-top:-10px; margin-left:-8px; margin-right:-8px;}
+.header .nav ul{float:right; margin-top:25px;}
+.header .nav ul li{float:left; list-style:none; padding-right:40px;}
+.header .nav ul li a{text-decoration:none; color:#fff; font-weight:800; font-size:12px; font-family:"微软雅黑";}
+.header .nav ul li a:hover{color:#C0C0C0;}
+.header .nav .last{padding-right:20px;}
+.header .content{ margin:0 auto;width:750px; height:280px; text-align:center; padding-top:150px;}
+.header .content h2{font-family:"微软雅黑"; color:#fff; font-size:20px; margin-top:50px;}
+.header .nav h1{font-size:65px; color:#fff; font-family:Arial, Helvetica, sans-serif;}
+.header .line{width:100px;  height:4px; background-color:#fff; border:none;}
+/*内容*/
+.text{width:750px; margin:0 auto;}
+.text img{margin:50px 120px;}
+.text p{margin:40px 0;}
+.text h2{font-size:30px;}
+</style>
+</head>
+
+<body>
+<div class="header">
+     <div class="nav">
+          <ul>
+              <li><a href="./index.html">HOME</a></li>
+              <li><a href="./living.html">LIVING</a></li>
+              <li><a href="./technical.html">TECHNICAL</a></li>
+              <li class="last"><a href="./about.html">ABOUT</a></li>
+          </ul>
+          <div class="content">
+              <h1>CSS3第二课</h1>
+              <h2>May 23,2016</h2>
+          </div>
+     </div>
+</div>
+<div class="text">
+	<h2>#弹性盒模型</h2>
+    <p>在使用弹性盒模型的属性时，需加浏览器内核前缀，且父级需加上display:box;（需加内核前缀，例：display:-webkit-box;）</p>
+    <p>box-orient 盒模型显示方式 :horizontal 水平显示  vertical 垂直显示</p>
+    <p>box-direction 盒模型排列顺序 :reverse 反序  normal 正序</p>
+    <p>box-ordina-group 盒模型排列位置 值为1,2,3......</p>
+    <p>box-flex 盒模型尺寸占所有的比例</p>
+    <p>box-pack 水平方向上多余空间管理 :start 子元素在左，多余空间在右  end 子右，空左  center 子中，空左右  justify 空间平均分配在元素左右两边</p>
+    <p>box-align 垂直方向上多余空间管理 :start 子上，空下  end 子下，空上  center 子中，空上下</p>
+    <h2>#盒模型新增属性</h2>
+    <p>box-shadow 盒阴影（可叠加）：（inset） x y 阴影模糊半径 （扩展阴影半径） 颜色。当有inset时，为内投影，反之外投影</p>
+    <p>-webkit-box-reflect 盒倒影（暂时只支持webkit内核） direction （距离） （渐变）。direction可选above|below|left|right</p>
+    <p>resize 自由缩放 （配合overflow:auto使用） ：both 水平垂直都可以  horizontal 水平  vertical 垂直</p>
+    <p>box-sizing :content-box 标准盒模型（content=width)  border-box 怪异盒模型（content=width-padding*2-border*2）</p>
+    <h2>#分栏布局</h2>
+    <p>使用分栏布局时，需加浏览器内核前缀</p>
+    <p>column-width:设置栏目宽度，列数自动计算</p>
+    <p>column-count:设置列数</p>
+    <p>column-gap:设置栏目之间距离</p>
+    <h2>#响应式布局</h2>
+    <h3>#根据不同分辨率引入不同样式表</h3>
+    <p>&ltlink rel="stylesheet" type="text/css" href="stylea.css"  media="screen and (min-width: 800px)"&gt</p>
+    <p>&ltlink rel="stylesheet" type="text/css" href="styleB.css" media="screen and (min-width: 400px) and (max-width: 800px)"&gt</p>
+    <p>&ltlink rel="stylesheet" type="text/css" href="styleC.css"    media="screen and (max-width: 400px)"&gt</p>
+    <h3>#横竖屏分别引入不同样式表</h3>
+    <p>横屏:&ltlink rel=”stylesheet” media=”all and (orientation:portrait)” href=”portrait.css”&gt</p>
+    <p>竖屏:&ltlink rel=”stylesheet” media=”all and (orientation:landscape)”href=”landscape.css”&gt</p>
+    <h3>#根据不同分辨率改变样式</h3>
+    <p>@media screen and (min-width:600px){}</p>
+    <p>@media screen and (max-width:600px){}</p>
+    <h3>#引入不同样式表+改变样式</h3>
+    <p>@media screen and (min-width:800px){}</p>
+    <p>@import url("index.css") screen (min-width:400px) and (max-width:800px)</p>
+    <p>@media screen and (max-width:400px){}</p>
+</div>
+</body>
+</html>
