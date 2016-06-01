@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS3第三课</title>
+<style>
+/*头部*/
+body{font-family:"微软雅黑"; font-size:16px;}
+div,ul,li,p,h1{padding:0; margin:0;}
+.header{background:#85a4da; height:430px; position:relative; margin-top:-10px; margin-left:-8px; margin-right:-8px;}
+.header .nav ul{float:right; margin-top:25px;}
+.header .nav ul li{float:left; list-style:none; padding-right:40px;}
+.header .nav ul li a{text-decoration:none; color:#fff; font-weight:800; font-size:12px; font-family:"微软雅黑";}
+.header .nav ul li a:hover{color:#C0C0C0;}
+.header .nav .last{padding-right:20px;}
+.header .content{ margin:0 auto;width:750px; height:280px; text-align:center; padding-top:150px;}
+.header .content h2{font-family:"微软雅黑"; color:#fff; font-size:20px; margin-top:50px;}
+.header .nav h1{font-size:65px; color:#fff; font-family:Arial, Helvetica, sans-serif;}
+.header .line{width:100px;  height:4px; background-color:#fff; border:none;}
+/*内容*/
+.text{width:750px; margin:0 auto;}
+.text img{margin:50px 120px;}
+.text p{margin:40px 0;}
+.text h2{font-size:30px;}
+</style>
+</head>
+
+<body>
+<div class="header">
+     <div class="nav">
+          <ul>
+              <li><a href="./index.html">HOME</a></li>
+              <li><a href="./living.html">LIVING</a></li>
+              <li><a href="./technical.html">TECHNICAL</a></li>
+              <li class="last"><a href="./about.html">ABOUT</a></li>
+          </ul>
+          <div class="content">
+              <h1>CSS3第三课</h1>
+              <h2>June 1,2016</h2>
+          </div>
+     </div>
+</div>
+<div class="text">
+    <h2>#圆角</h2>
+    <p>border-radius 1个参数时：表示4个角。2个参数时：第一个表示左上和右下，第二个表示右上和左下。3个参数时：第一个表示左上，第二个表示右上和左下，第三个表示右下。4个参数时：分别表示左上，右上，右下，左下。</p>
+    <p>border-radius:x/y;此时表示椭圆 x为x轴半径，y为y轴半径</p>
+    <h2>#边框</h2>
+    <p>边框背景 border-image:url 切割图片(x y) 边框宽度 图片排列方式(round:平铺,repeat:重复,stretch 拉伸)</p>
+    <p>边框颜色 -moz-border-colors</p>
+    <h2>#背景</h2>
+    <p>线性渐变 background:-webkit-linear-gradient(left top,red 0,blue 50%) 第一个参数:起始位置(可以用deg表示) 第二个参数：从什么颜色什么位置开始渐变 第三个参数:渐变到什么颜色什么位置</p>
+    <p>线性渐变平铺 -webkit-repeating-linear-gradient</p>
+    <p>多背景 background:url1,url2 (背景1在背景2之上)</p>
+    <p>径向渐变 background:-webkit-radial-gradient(起点，形状(大小)，颜色1，颜色2)</p>
+    <p>背景尺寸 background-size:x y (前者为x轴，后者为y轴) :cover 覆盖  :contain 包含</p>
+    <p>背景原点设置 background-origin:border-box 边框左上角  :padding-box padding左上角  :content-box 内容左上角</p>
+    <p>背景裁切 background-clip:border-box 边框部分显示背景  :padding-box padding区以内显示背景  :content-box 内容区显示背景  -webkit-background-clip:text 文字显示背景</p>
+    <p>遮罩 -webkit-mask:url 是否平铺 位置</p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+</div>
+</body>
+</html>
