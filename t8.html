@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS3第五课</title>
+<style>
+/*头部*/
+body{font-family:"微软雅黑"; font-size:16px;}
+div,ul,li,p,h1{padding:0; margin:0;}
+.header{background:#85a4da; height:430px; position:relative; margin-top:-10px; margin-left:-8px; margin-right:-8px;}
+.header .nav ul{float:right; margin-top:25px;}
+.header .nav ul li{float:left; list-style:none; padding-right:40px;}
+.header .nav ul li a{text-decoration:none; color:#fff; font-weight:800; font-size:12px; font-family:"微软雅黑";}
+.header .nav ul li a:hover{color:#C0C0C0;}
+.header .nav .last{padding-right:20px;}
+.header .content{ margin:0 auto;width:750px; height:280px; text-align:center; padding-top:150px;}
+.header .content h2{font-family:"微软雅黑"; color:#fff; font-size:20px; margin-top:50px;}
+.header .nav h1{font-size:65px; color:#fff; font-family:Arial, Helvetica, sans-serif;}
+.header .line{width:100px;  height:4px; background-color:#fff; border:none;}
+/*内容*/
+.text{width:750px; margin:0 auto;}
+.text img{margin:50px 120px;}
+.text p{margin:40px 0;}
+.text h2{font-size:30px;}
+</style>
+</head>
+
+<body>
+<div class="header">
+     <div class="nav">
+          <ul>
+              <li><a href="./index.html">HOME</a></li>
+              <li><a href="./living.html">LIVING</a></li>
+              <li><a href="./technical.html">TECHNICAL</a></li>
+              <li class="last"><a href="./about.html">ABOUT</a></li>
+          </ul>
+          <div class="content">
+              <h1>CSS3第五课</h1>
+              <h2>June 5,2016</h2>
+          </div>
+     </div>
+</div>
+<div class="text">
+	<h2>#3D变换</h2>
+    <p>使用3D变换前，需先建立3D空间 transform-style:preserve-3d; 设置景深 perspective:800px;(大小可自行定义)</p>
+    <p>景深基点 perspective-origin:center center 默认。 可改left、right、bottom、top</p>
+    <p>3D旋转 transform:rotateX(xdeg); transform:rotateY(ydeg); transform:rotateZ(zdeg);</p>
+    <p>3D平移 transform:translateZ(zpx);</p>
+    <h2>#运动</h2>
+    <p>@keyframes 动画名称{ 0%{width:100px;} 100%{width:500px;}}</p>
+    <p>animation:运动时间 (延迟时间) 动画名称 运动形式 (重复次数) 运动顺序; 其中当重复次数定义为infinite则为无限次,运动顺序有normal:正序、alternate:偶数次为倒序</p>
+    <p>播放状态 animation-play-state:running 播放、pause 暂停</p>
+    <p>事件 每执行完一次animation后执行一次方法  obj.addEventListener('webkitAnimationEnd', function (){}, false);
+      obj.addEventListener('animationend', function (){}, false);
+</p>
+    <p></p>
+</div>
+</body>
+</html>
